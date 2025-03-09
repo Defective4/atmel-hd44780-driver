@@ -20,7 +20,7 @@ public:
   void setByte(uint8_t byte) {
     for (int i = 0; i < 8; i++) {
       PORTC = 0;
-      if (byte >> i & 0b1) {
+      if (byte >> 7 - i & 0b1) {
         PORTC |= serial;
       }
       PORTC |= sclock;
