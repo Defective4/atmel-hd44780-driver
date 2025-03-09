@@ -47,7 +47,7 @@ public:
 
   void commit() override {
     PORTB |= pinEn;
-    sleep(5);
+    sleep100us();
     PORTB &= ~pinEn;
   }
 };

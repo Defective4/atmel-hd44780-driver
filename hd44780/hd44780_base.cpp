@@ -65,4 +65,8 @@ public:
   void sleep(uint16_t ms) {
     _delay_loop_2(F_CPU / 4e3 * ms);
   }
+
+  void sleep100us() {
+    _delay_loop_2(F_CPU / 5e3);
+  }
 };

@@ -31,7 +31,7 @@ public:
 
   void commit() override {
     reg->setByte(lastbits | 0b10);
-    sleep(5);
+    sleep100us();
     reg->setByte(lastbits & ~0b10);
   }
 };
