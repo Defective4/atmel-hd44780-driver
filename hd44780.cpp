@@ -60,6 +60,8 @@ public:
   }
 
   void init() {
+    DDRB |= pinRs | pinEn;
+    DDRC |= pinD4 | pinD5 | pinD6 | pinD7;
     sleep(10);
     write4Bit(0b0010, false);
     clearDisplay();
