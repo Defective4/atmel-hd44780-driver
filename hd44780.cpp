@@ -14,11 +14,15 @@ private:
   void writeByte(uint8_t byte, bool mode) {
     write4Bit((byte >> 4) & 0x0f, mode);
     write4Bit(byte & 0x0f, mode);
+    standby();
   }
 
   virtual void write4Bit(uint8_t bits, bool mode);
 
   virtual void commit();
+
+  virtual void standby();
+
 public:
   void init() {
     sleep(10);

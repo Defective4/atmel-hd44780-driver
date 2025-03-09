@@ -21,9 +21,13 @@ public:
     DDRC |= pinD4 | pinD5 | pinD6 | pinD7;
   }
 
-  void write4Bit(uint8_t bits, bool mode) override {
+  void standby() {
     PORTB &= ~(pinRs | pinEn);
     PORTC &= ~(pinD4 | pinD5 | pinD6 | pinD7);
+  }
+
+  void write4Bit(uint8_t bits, bool mode) override {
+    standby();
 
     if (mode) {
       PORTB |= pinRs;
